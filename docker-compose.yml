@@ -1,0 +1,21 @@
+version: "3.7"
+
+services: 
+  mass-js:
+    container_name: mass-js
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    networks: 
+      - traefik_default
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    labels: 
+      - traefik.enable=true
+
+networks:
+  traefik_default:
+    external: true
