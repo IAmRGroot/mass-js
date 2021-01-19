@@ -1,13 +1,15 @@
 FROM node:alpine
 
 WORKDIR /app
+COPY . ./
 
-ENV PATH /app/node_modules/.bin:$PATH
+ENV PATH ./node_modules/.bin:$PATH
 
-COPY package.json ./
-COPY package-lock.json ./
 RUN npm install
 
-COPY . ./
+RUN chown -R node:node ./
+USER node
+
+EXPOSE 443
 
 CMD [ "npm", "run", "dev"]
