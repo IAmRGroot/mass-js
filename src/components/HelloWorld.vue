@@ -52,20 +52,15 @@ a {
 }
 </style>
 
-<script lang="ts">
-import { ref, defineComponent } from 'vue';
+<script setup lang="ts">
+import { ref, defineProps } from 'vue';
 
-export default defineComponent({
-    name: 'HelloWorld',
-    props: {
-        msg: {
-            type: String,
-            required: true
-        }
-    },
-    setup: () => {
-        const count = ref(0);
-        return { count };
+const props = defineProps({
+    msg: {
+        type: String,
+        required: true,
     }
 });
+
+const count = ref(0);
 </script>

@@ -13,7 +13,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/app
-      - /app/node_modules
     labels:
       - traefik.enable=true
       - traefik.http.services.mass-js.loadbalancer.server.port=443
