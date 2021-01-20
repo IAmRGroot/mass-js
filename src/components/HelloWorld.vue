@@ -11,6 +11,9 @@
             target="_blank"
         >Vue 3 Documentation</a>
     </p>
+    <p>
+        Edit a file to see the Hot Module Replacement in action :D
+    </p>
 </template>
 
 <style scoped>
