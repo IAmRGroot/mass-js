@@ -14,6 +14,14 @@
     <p>
         Edit a file to see the Hot Module Replacement in action :D
     </p>
+    <p>
+        Clicks {{ count }}
+    </p>
+    <p>
+        <button @click="increment">
+            Increment
+        </button>
+    </p>
 </template>
 
 <style scoped>
@@ -33,4 +41,6 @@ const props = defineProps({
 });
 
 const count = ref(0);
+
+const increment = () => count.value++;
 </script>
